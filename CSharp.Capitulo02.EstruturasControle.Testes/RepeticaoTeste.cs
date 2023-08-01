@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Channels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSharp.Capitulo02.EstruturasControle.Testes
@@ -17,6 +18,62 @@ namespace CSharp.Capitulo02.EstruturasControle.Testes
                 }
 
                 Console.WriteLine(new string('-', 50));
+            }
+        }
+        [TestMethod]
+        public void EstruturaForTest()
+        {
+            var i = 1;
+
+            for (Console.WriteLine("Iniciou"); i <= 3; Console.WriteLine(i))
+            {
+                i++;
+            }
+
+            /*
+            for(1. Inicialização; 2. Condição; 4. Pós-execução) 
+            {
+             3. Execução 
+            }
+            */
+        }
+
+        [TestMethod]
+        public void ForApenasComCondicaoTeste()
+        {
+            var i = 1;
+
+            for (; i <= 5;)
+            {
+                Console.WriteLine(i++);
+            }
+        }
+
+        [TestMethod]
+        public void ContinueTeste()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                if (i <= 5)
+                {
+                    continue;
+                }
+                
+                Console.WriteLine(i);
+            }
+        }
+
+        [TestMethod]
+        public void BreakTeste()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                if (i > 5)
+                {
+                    break;
+                }
+
+                Console.WriteLine(i);
             }
         }
     }
